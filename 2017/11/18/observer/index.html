@@ -69,13 +69,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="MrMo Program Learning">
-<meta property="og:url" content="http://mrmo905.github.io/index.html">
+<meta name="description" content="定义观察者模式定义了一系列对象之间的一对多的关系，当一个对象改变状态，其他依赖者都会收到通知 简单实现 Subject.java 123456789public interface Subject &amp;#123;    public void registerObserver(Observer o);    pu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="观察者(Observer)模式">
+<meta property="og:url" content="http://mrmo905.github.io/2017/11/18/observer/index.html">
 <meta property="og:site_name" content="MrMo Program Learning">
+<meta property="og:description" content="定义观察者模式定义了一系列对象之间的一对多的关系，当一个对象改变状态，其他依赖者都会收到通知 简单实现 Subject.java 123456789public interface Subject &amp;#123;    public void registerObserver(Observer o);    public void removeObserver(Observer o);    pub">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-19T07:03:03.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MrMo Program Learning">
+<meta name="twitter:title" content="观察者(Observer)模式">
+<meta name="twitter:description" content="定义观察者模式定义了一系列对象之间的一对多的关系，当一个对象改变状态，其他依赖者都会收到通知 简单实现 Subject.java 123456789public interface Subject &amp;#123;    public void registerObserver(Observer o);    public void removeObserver(Observer o);    pub">
 
 
 
@@ -105,13 +109,13 @@
 
 
 
-  <link rel="canonical" href="http://mrmo905.github.io/"/>
+  <link rel="canonical" href="http://mrmo905.github.io/2017/11/18/observer/"/>
 
 
 
 
 
-  <title>MrMo Program Learning</title>
+  <title>观察者(Observer)模式 | MrMo Program Learning</title>
   
 
 
@@ -130,8 +134,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,176 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrmo905.github.io/2017/11/19/Java/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MrMo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MrMo Program Learning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/19/Java/" itemprop="url">IE6-IE11 Get请求参数带中文tomcat 返回400错误并显示：Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T15:08:20+08:00">
-                2017-11-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Tomcat出现版本"><a href="#Tomcat出现版本" class="headerlink" title="Tomcat出现版本"></a>Tomcat出现版本</h2><ul>
-<li>7.0.69+</li>
-<li>8.0.39+</li>
-<li>8.5.7+</li>
-</ul>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
-<li>IE6-IE11(Edge 不存在，可能修改了编码方案) 中文会被IE使用iso-8859-1编码 编码后的中文字符串带\，这是RFC文档中规定的不安全字符，Tomcat在高版本中增加的安全验证，凡是RFC 3986中非URL可携带的字符，都会返回400错误</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
-<li>前端对中文URLEncoding后在发送请求，后端要么修改tomcat源码要么降低tomcat版本，否则无法解决这个bug，查阅资料后并没有找到可以更改IE默认编码的方法，后端在tomcat的server.xml中增加urlencoding配置也无法解决这个问题，因为这个问题根本都还没有进入到业务层就已经被拦截返回了。所以，综上，前端转码是最好的方案，因为Url参数中带中文本来就是不符合规范的。</li>
-</ul>
-<h2 id="附-RFC-3986文档关于特殊字符的定义"><a href="#附-RFC-3986文档关于特殊字符的定义" class="headerlink" title="附 RFC 3986文档关于特殊字符的定义"></a>附 RFC 3986文档关于特殊字符的定义</h2><ul>
-<li><p>RFC3986文档规定，Url中只允许包含英文字母（a-zA-Z）、数字（0-9）、-_.~4个特殊字符以及所有保留字符。</p>
-</li>
-<li><p>RFC3986中指定了以下字符为保留字符：<br>!    *    ‘    (    )    ;    :    @    &amp;    =    +    $    ,    /    ?    #    [    ]</p>
-</li>
-<li><p>以下为不安全字符</p>
-<ul>
-<li>空格    Url在传输的过程，或者用户在排版的过程，或者文本处理程序在处理Url的过程，都有可能引入无关紧要的空格，或者将那些有意义的空格给去掉</li>
-<li>引号以及&lt;&gt;    引号和尖括号通常用于在普通文本中起到分隔Url的作用</li>
-<li>#通常用于表示书签或者锚点</li>
-<li>%    百分号本身用作对不安全字符进行编码时使用的特殊字符，因此本身需要编码</li>
-<li>{}|\^[]`~    某一些网关或者传输代理会篡改这些字符</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -413,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/18/observer/" itemprop="url">观察者(Observer)模式</a></h1>
+          <h1 class="post-title" itemprop="name headline">观察者(Observer)模式</h1>
         
 
         <div class="post-meta">
@@ -485,9 +319,7 @@
       
 
       
-        
-          
-            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><em>观察者模式定义了一系列对象之间的一对多的关系，当一个对象改变状态，其他依赖者都会收到通知</em></p>
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><em>观察者模式定义了一系列对象之间的一对多的关系，当一个对象改变状态，其他依赖者都会收到通知</em></p>
 <h3 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h3><ul>
 <li><p>Subject.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Subject</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerObserver</span><span class="params">(Observer o)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeObserver</span><span class="params">(Observer o)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyObservers</span><span class="params">(Object changeData)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -514,8 +346,6 @@
 <li>Java 内置了观察者模式的方法，通过继承Observable和实现Observer，就能实现这个设计模式，不过Java内置的Observable，并不是一个接口，这就意味着必须要继承这个父类，然而实际情况中，如果Observer需要继承其他类时，这就很难做出抉择，而且Observable的setchanged()方法是protect的，那就意味着只有Observable的子类才能使用，除非你是Observable的子类，否则你将无法创建Observable实例，并把它组合到自己的类中来。这就违反了设计模式中的少用继承，多用组合的原则。不过，无论怎样，在了解这个模式以后，会知道在什么时候去用什么样的实现。</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -532,12 +362,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/19/Java/" rel="prev" title="IE6-IE11 Get请求参数带中文tomcat 返回400错误并显示：Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986">
+                IE6-IE11 Get请求参数带中文tomcat 返回400错误并显示：Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -547,10 +393,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -578,8 +425,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">MrMo</p>
@@ -631,6 +487,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单实现"><span class="nav-number">1.1.</span> <span class="nav-text">简单实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java内置的观察者模式"><span class="nav-number">1.2.</span> <span class="nav-text">Java内置的观察者模式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
